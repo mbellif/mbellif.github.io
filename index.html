@@ -16,7 +16,7 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             color: #333;
-            background-color: #fdfdfd;
+            background-color: #ffffff; /* Plain white background */
             padding: 0;
         }
 
@@ -25,7 +25,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 20px 10%;
             background-color: #ffffff;
             border-bottom: 1px solid #eaeaea;
         }
@@ -40,7 +40,7 @@
             text-decoration: none;
             color: rgb(80, 136, 164); /* Soft Blue */
             font-size: 22px;
-            font-weight: bold; /* Links are now bold */
+            font-weight: bold;
             transition: color 0.3s ease;
         }
 
@@ -50,11 +50,11 @@
 
         /* Main Content */
         .main {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
-            align-items: start;
-            padding: 50px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px 10%;
+            align-items: center;
         }
 
         .main .about p {
@@ -84,7 +84,7 @@
         /* Sections */
         section {
             margin-top: 30px;
-            padding: 0 5%;
+            padding: 0 10%;
         }
 
         section h2 {
@@ -119,8 +119,8 @@
         footer {
             text-align: center;
             margin-top: 50px;
-            padding: 20px;
-            background-color: #fdfdfd;
+            padding: 20px 10%;
+            background-color: #ffffff;
             color: #777;
             border-top: 1px solid #eaeaea;
         }
@@ -128,11 +128,12 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .main {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
 
             .main .picture {
-                text-align: center;
+                margin-top: 20px;
             }
         }
     </style>
