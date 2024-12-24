@@ -16,7 +16,8 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             color: #333;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Plain white background */
+            padding: 0;
         }
 
         /* Header */
@@ -46,6 +47,112 @@
         nav a:hover {
             color: rgb(181, 99, 101); /* Soft Red hover effect */
         }
+
+        /* Main Content */
+        .main {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 50px 10%;
+            align-items: center;
+        }
+
+        .main .about {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+
+        .main .about p {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .main .about a {
+            color: rgb(80, 136, 164);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main .about a:hover {
+            text-decoration: underline;
+            color: rgb(181, 99, 101);
+        }
+
+        .main .picture {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .main .picture img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sections */
+        section {
+            margin-top: 30px;
+            padding: 0 10%;
+        }
+
+        section h2 {
+            font-size: 26px;
+            color: #4a5568;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        section ul li a {
+            color: rgb(80, 136, 164);
+            text-decoration: none;
+        }
+
+        section ul li a:hover {
+            color: rgb(181, 99, 101);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            color: #777;
+            border-top: 1px solid #eaeaea;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main {
+                flex-wrap: wrap;
+            }
+
+            .main .about {
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .main .picture {
+                flex: 0 0 auto;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -57,5 +164,47 @@
             <a href="#teaching">Teaching</a>
         </nav>
     </header>
+
+    <div class="main">
+        <div class="about">
+            <p>
+                I am a fourth year PhD student in Economics at the London School of Economics.
+                My research interests are in macroeconomics.
+            </p>
+            <p>
+                <a href="CV/cv.pdf" target="_blank">Click here to see my CV.</a>
+            </p>
+        </div>
+        <div class="picture">
+            <img src="pictures/bellifemine_picture.jpg" alt="Marco Bellifemine">
+        </div>
+    </div>
+
+    <section id="research">
+        <h2>Research</h2>
+        <ul>
+            <li> <a href="research/paper1.pdf" target="_blank">The Regional Keynesian Cross</a></li>
+            <li><a href="research/paper2.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a></li>
+            <li><a href="research/paper2.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a></li>
+            <li><a href="research/paper2.pdf" target="_blank">A Distributional Theory of Household Sentiment</a></li>
+        </ul>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <h3>London School of Economics</h3>
+        <ul>
+            <li>TA for the undergraduate course "EC2B1 - Macroeconomics II"</li>
+            <li>TA for the graduate course "EC442 - Macroeconomics for MRes students"</li>
+        </ul>
+        <h3>Bocconi University</h3>
+        <ul>
+            <li>TA for the undergraduate course "30459 - Macroeconomics and Economic Policy"</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2024 Marco Bellifemine. All rights reserved.
+    </footer>
 </body>
 </html>
