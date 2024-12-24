@@ -16,7 +16,7 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             color: #333;
-            background-color: #ffffff; /* Plain white background */
+            background-color: #ffffff;
             padding: 0;
         }
 
@@ -32,30 +32,31 @@
 
         header h1 {
             font-size: 36px;
-            color: #4a5568; /* Set color for Marco Bellifemine */
+            color: #4a5568;
         }
 
         nav a {
             margin-left: 30px;
             text-decoration: none;
-            color: #4a5568; /* Matches the name color */
+            color: #4a5568;
             font-size: 22px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: rgb(181, 99, 101); /* Soft Red hover effect */
+            color: rgb(181, 99, 101);
         }
 
         /* Main Content */
-	.main {
-    	    display: flex;
+        .main {
+            display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
-            padding: 20px 10%; /* Reduced padding to bring the content closer to the top */
-            align-items: flex-start; /* Align text and picture to the top */
-	}
+            padding: 20px 10%;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
 
         .main .about {
             flex: 1;
@@ -94,8 +95,12 @@
 
         /* Sections */
         section {
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 0 10%;
+        }
+
+        #research {
+            margin-top: 10px;
         }
 
         section h2 {
@@ -107,8 +112,9 @@
         }
 
         section ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 0; /* Removes left padding for alignment */
+            margin-left: 0;
         }
 
         section ul li {
@@ -119,17 +125,17 @@
         section ul li a {
             color: rgb(80, 136, 164);
             text-decoration: none;
-            font-weight: bold; /* Make the paper titles bold */
-         }
+            font-weight: bold;
+        }
 
-         section ul li a:hover {
+        section ul li a:hover {
             color: rgb(181, 99, 101);
             text-decoration: underline;
-         }
+        }
 
-	section ul li .coauthors {
+        section ul li .coauthors {
             display: block;
-            font-style: italic; /* Coauthors in italic */
+            font-style: italic;
             color: #555;
             margin-top: 5px;
         }
@@ -210,11 +216,10 @@
         </ul>
     </section>
 
-
     <section id="teaching">
         <h2>Teaching</h2>
         <ul>
-	    <li>TA for the graduate course <em>EC442 - Macroeconomics for MRes students</em>, LSE</li>
+            <li>TA for the graduate course <em>EC442 - Macroeconomics for MRes students</em>, LSE</li>
             <li>TA for the undergraduate course <em>EC2B1 - Macroeconomics II</em>, LSE</li>
             <li>TA for the undergraduate course <em>30459 - Macroeconomics and Economic Policy</em>, Bocconi</li>
         </ul>
