@@ -93,6 +93,77 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Mobile Header */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack header elements vertically */
+                align-items: flex-start; /* Align the header items to the left */
+                padding: 15px 5%; /* Adjust padding for mobile */
+            }
+
+            header h1 {
+                font-size: 28px; /* Adjust font size for mobile */
+                margin-bottom: 10px; /* Add space between the title and navigation */
+            }
+
+            nav {
+                display: flex;
+                flex-direction: row; /* Keep nav items in a row */
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 18px;
+            }
+
+            /* Dropdown menu for smaller screens */
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #ffffff;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                min-width: 160px;
+                z-index: 1;
+            }
+
+            .dropdown a {
+                padding: 10px;
+                font-size: 16px;
+                text-align: left;
+                color: #4a5568;
+            }
+
+            .dropdown a:hover {
+                color: rgb(181, 99, 101);
+            }
+
+            .dropdown-btn {
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: bold;
+                color: #4a5568;
+            }
+
+            .dropdown-btn:hover {
+                color: rgb(181, 99, 101);
+            }
+
+            /* Show dropdown when clicked */
+            .dropdown.show {
+                display: flex;
+            }
+        }
+
+        /* Show dropdown menu on click */
+        @media (max-width: 768px) {
+            .dropdown-btn:focus + .dropdown, .dropdown-btn:active + .dropdown {
+                display: flex;
+            }
+        }
+
         /* Sections */
         section {
             margin-top: 20px;
@@ -111,11 +182,11 @@
             margin-bottom: 15px;
         }
 
-	section ul {
-    	    list-style-type: none; /* Removes bullet points */
-    	    padding-left: 15px; /* Adds indentation for the list items */
-    	    margin-left: 0; /* Ensures alignment with other elements */
-	}
+        section ul {
+            list-style-type: none;
+            padding-left: 15px;
+            margin-left: 0;
+        }
 
         section ul li {
             margin-bottom: 10px;
@@ -138,7 +209,7 @@
             font-style: italic;
             color: #555;
             margin-top: 5px;
-	    padding-left: 20px; /* Keeps the coauthors line indented */
+            padding-left: 20px;
         }
 
         /* Footer */
@@ -174,9 +245,12 @@
     <header>
         <h1>Marco Bellifemine</h1>
         <nav>
-            <a href="#research">Research</a>
-            <a href="#cv">CV</a>
-            <a href="#teaching">Teaching</a>
+            <div class="dropdown-btn" onclick="toggleDropdown()">Research, Teaching, CV</div>
+            <div class="dropdown" id="dropdownMenu">
+                <a href="#research">Research</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#cv">CV</a>
+            </div>
         </nav>
     </header>
 
@@ -229,5 +303,12 @@
     <footer>
         &copy; 2024 Marco Bellifemine. All rights reserved.
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownMenu");
+            dropdown.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
