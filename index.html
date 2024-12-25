@@ -35,12 +35,13 @@
             color: #4a5568;
         }
 
-        nav {
+        /* Desktop Menu */
+        .desktop-menu {
             display: flex;
-            gap: 30px;
         }
 
-        nav a {
+        .desktop-menu a {
+            margin-left: 30px;
             text-decoration: none;
             color: #4a5568;
             font-size: 22px;
@@ -48,13 +49,16 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
+        .desktop-menu a:hover {
             color: rgb(181, 99, 101);
         }
 
-        /* Dropdown for mobile */
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none; /* Hidden by default for larger screens */
+        }
+
         .dropdown-btn {
-            display: none; /* Hidden by default */
             cursor: pointer;
             font-size: 18px;
             font-weight: bold;
@@ -66,7 +70,7 @@
         }
 
         .dropdown {
-            display: none; /* Hidden by default */
+            display: none;
             flex-direction: column;
             position: absolute;
             background-color: #ffffff;
@@ -80,6 +84,7 @@
             font-size: 16px;
             text-align: left;
             color: #4a5568;
+            text-decoration: none;
         }
 
         .dropdown a:hover {
@@ -90,14 +95,15 @@
             display: flex;
         }
 
-        /* Mobile-specific styles */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            nav {
-                display: none; /* Hide the nav links on mobile */
+            .desktop-menu {
+                display: none; /* Hide desktop menu on smaller screens */
             }
 
-            .dropdown-btn {
-                display: block; /* Show the dropdown button */
+            .mobile-menu {
+                display: flex; /* Show mobile menu on smaller screens */
+                flex-direction: column;
             }
         }
     </style>
@@ -105,20 +111,24 @@
 <body>
     <header>
         <h1>Marco Bellifemine</h1>
-        <!-- Links for desktop -->
         <nav>
-            <a href="#research">Research</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#cv">CV</a>
-        </nav>
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <a href="#research">Research</a>
+                <a href="#teaching">Teaching</a>
+                <a href="#cv">CV</a>
+            </div>
 
-        <!-- Dropdown button for mobile -->
-        <div class="dropdown-btn" onclick="toggleDropdown()">Research, Teaching, CV</div>
-        <div class="dropdown" id="dropdownMenu">
-            <a href="#research">Research</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#cv">CV</a>
-        </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="dropdown-btn" onclick="toggleDropdown()">Research, Teaching, CV</div>
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="#research">Research</a>
+                    <a href="#teaching">Teaching</a>
+                    <a href="#cv">CV</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="main">
@@ -141,32 +151,31 @@
         <ul>
             <li>
                 <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a> &mdash; slides data
-                                <span class="coauthors">
-    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
-</span>
+                <span class="coauthors">
+                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+                    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
+                </span>
             </li>
             <li>
                 <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a> &mdash; slides
                 <span class="coauthors">
-    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
-</span>
+                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+                    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
+                </span>
             </li>
             <li>
                 <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a> &mdash; slides
                 <span class="coauthors">
-    with <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
-    and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank" class="coauthor-link">Tommaso Monacelli</a>
-</span>
-
+                    with <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
+                    and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank" class="coauthor-link">Tommaso Monacelli</a>
+                </span>
             </li>
             <li>
                 <a href="research/paper4.pdf" target="_blank">A Distributional Theory of Household Sentiment</a> &mdash; slides
                 <span class="coauthors">
-    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-    and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank" class="coauthor-link">Seyed Hosseini Maasoum</a> 
-</span>
+                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+                    and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank" class="coauthor-link">Seyed Hosseini Maasoum</a>
+                </span>
             </li>
         </ul>
     </section>
