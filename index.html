@@ -35,12 +35,7 @@
             color: #4a5568;
         }
 
-        /* Desktop Menu */
-        .desktop-menu {
-            display: flex;
-        }
-
-        .desktop-menu a {
+        nav a {
             margin-left: 30px;
             text-decoration: none;
             color: #4a5568;
@@ -49,61 +44,210 @@
             transition: color 0.3s ease;
         }
 
-        .desktop-menu a:hover {
+        nav a:hover {
             color: rgb(181, 99, 101);
         }
 
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none; /* Hidden by default for larger screens */
-        }
-
-        .dropdown-btn {
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            color: #4a5568;
-        }
-
-        .dropdown-btn:hover {
-            color: rgb(181, 99, 101);
-        }
-
-        .dropdown {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            background-color: #ffffff;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown a {
-            padding: 10px;
-            font-size: 16px;
-            text-align: left;
-            color: #4a5568;
-            text-decoration: none;
-        }
-
-        .dropdown a:hover {
-            color: rgb(181, 99, 101);
-        }
-
-        .dropdown.show {
+        /* Main Content */
+        .main {
             display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 20px 10%;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .main .about {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+
+        .main .about p {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .main .about a {
+            color: rgb(80, 136, 164);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main .about a:hover {
+            text-decoration: underline;
+            color: rgb(181, 99, 101);
+        }
+
+        .main .picture {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .main .picture img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+	/* Styling for coauthors */
+        .coauthors {
+            font-style: italic;
+            color: #555; /* Ensure this matches the color you want */
+        }
+
+	.coauthors a {
+    	    text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits the color from the parent element */
+    	    font-weight: normal; /* Ensures the link text is not bold */
+	}
+        /* Mobile Header */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack header elements vertically */
+                align-items: flex-start; /* Align the header items to the left */
+                padding: 15px 5%; /* Adjust padding for mobile */
+            }
+
+            header h1 {
+                font-size: 28px; /* Adjust font size for mobile */
+                margin-bottom: 10px; /* Add space between the title and navigation */
+            }
+
+            nav {
+                display: flex;
+                flex-direction: row; /* Keep nav items in a row */
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 18px;
+            }
+
+            /* Dropdown menu for smaller screens */
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background-color: #ffffff;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                min-width: 160px;
+                z-index: 1;
+            }
+
+            .dropdown a {
+                padding: 10px;
+                font-size: 16px;
+                text-align: left;
+                color: #4a5568;
+            }
+
+            .dropdown a:hover {
+                color: rgb(181, 99, 101);
+            }
+
+            .dropdown-btn {
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: bold;
+                color: #4a5568;
+            }
+
+            .dropdown-btn:hover {
+                color: rgb(181, 99, 101);
+            }
+
+            /* Show dropdown when clicked */
+            .dropdown.show {
+                display: flex;
+            }
+        }
+
+        /* Show dropdown menu on click */
+        @media (max-width: 768px) {
+            .dropdown-btn:focus + .dropdown, .dropdown-btn:active + .dropdown {
+                display: flex;
+            }
+        }
+
+        /* Sections */
+        section {
+            margin-top: 20px;
+            padding: 0 10%;
+        }
+
+        #research {
+            margin-top: 10px;
+        }
+
+        section h2 {
+            font-size: 26px;
+            color: #4a5568;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding-left: 15px;
+            margin-left: 0;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        section ul li a {
+            color: rgb(80, 136, 164);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section ul li a:hover {
+            color: rgb(181, 99, 101);
+            text-decoration: underline;
+        }
+
+        section ul li .coauthors {
+            display: block;
+            font-style: italic;
+            color: #555;
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 10%;
+            background-color: #ffffff;
+            color: #777;
+            border-top: 1px solid #eaeaea;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .desktop-menu {
-                display: none; /* Hide desktop menu on smaller screens */
+            .main {
+                flex-wrap: wrap;
             }
 
-            .mobile-menu {
-                display: flex; /* Show mobile menu on smaller screens */
-                flex-direction: column;
+            .main .about {
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .main .picture {
+                flex: 0 0 auto;
+                margin: 0 auto;
             }
         }
     </style>
@@ -112,21 +256,11 @@
     <header>
         <h1>Marco Bellifemine</h1>
         <nav>
-            <!-- Desktop Menu -->
-            <div class="desktop-menu">
+            <div class="dropdown-btn" onclick="toggleDropdown()">Research, Teaching, CV</div>
+            <div class="dropdown" id="dropdownMenu">
                 <a href="#research">Research</a>
                 <a href="#teaching">Teaching</a>
                 <a href="#cv">CV</a>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <div class="dropdown-btn" onclick="toggleDropdown()">Research, Teaching, CV</div>
-                <div class="dropdown" id="dropdownMenu">
-                    <a href="#research">Research</a>
-                    <a href="#teaching">Teaching</a>
-                    <a href="#cv">CV</a>
-                </div>
             </div>
         </nav>
     </header>
@@ -151,31 +285,32 @@
         <ul>
             <li>
                 <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a> &mdash; slides data
-                <span class="coauthors">
-                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-                    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
-                </span>
+                                <span class="coauthors">
+    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
+</span>
             </li>
             <li>
                 <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a> &mdash; slides
                 <span class="coauthors">
-                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-                    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
-                </span>
+    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+    and <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
+</span>
             </li>
             <li>
                 <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a> &mdash; slides
                 <span class="coauthors">
-                    with <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a>
-                    and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank" class="coauthor-link">Tommaso Monacelli</a>
-                </span>
+    with <a href="https://www.rustamjamilov.com" target="_blank" class="coauthor-link">Rustam Jamilov</a> 
+    and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank" class="coauthor-link">Tommaso Monacelli</a>
+</span>
+
             </li>
             <li>
                 <a href="research/paper4.pdf" target="_blank">A Distributional Theory of Household Sentiment</a> &mdash; slides
                 <span class="coauthors">
-                    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
-                    and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank" class="coauthor-link">Seyed Hosseini Maasoum</a>
-                </span>
+    with <a href="https://adriencouturier.com/" target="_blank" class="coauthor-link">Adrien Couturier</a>
+    and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank" class="coauthor-link">Seyed Hosseini Maasoum</a> 
+</span>
             </li>
         </ul>
     </section>
