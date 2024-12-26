@@ -95,15 +95,34 @@
 
 	/* Styling for coauthors */
         .coauthors {
-            font-style: italic;
             color: #555;
         }
 
 	.coauthors a {
-    	    text-decoration: none;
+            text-decoration: none;
             color: inherit;
-    	    font-weight: normal;
+            font-weight: normal;
 	}
+
+        /* Button for slides and data */
+        .details a {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 5px;
+            color: rgb(80, 136, 164);
+            font-size: 16px;
+            text-decoration: none;
+            background-color: rgba(80, 136, 164, 0.1);
+            border: 1px solid rgba(80, 136, 164, 0.3);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .details a:hover {
+            background-color: rgba(80, 136, 164, 0.2);
+            border-color: rgba(80, 136, 164, 0.5);
+        }
+
         /* Mobile Header */
         @media (max-width: 768px) {
             header {
@@ -169,13 +188,6 @@
             text-decoration: underline;
         }
 
-        section ul li .details {
-            font-style: italic;
-            color: #555;
-            margin-top: 5px;
-            padding-left: 20px;
-        }
-
         /* Footer */
         footer {
             text-align: center;
@@ -236,26 +248,26 @@
             <li>
                 <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a>, <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
                 <div class="details">
-                    <a href="slides/rkc_slides.pdf" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: normal;">slides</a>
-                    <a href="data/rkc_data.zip" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: normal;">data</a>
+                    <a href="slides/rkc_slides.pdf" target="_blank">slides</a>
+                    <a href="data/rkc_data.zip" target="_blank">data</a>
                 </div>
             </li>
             <li>
                 <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>, <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
                 <div class="details">
-                    <a href="slides/ezrkc_slides.pdf" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: normal;">slides</a>
+                    <a href="slides/ezrkc_slides.pdf" target="_blank">slides</a>
                 </div>
             </li>
             <li>
                 <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>, <span class="coauthors">with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a> and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a></span>
                 <div class="details">
-                    <a href="slides/hbank_slides.pdf" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: normal;">slides</a>
+                    <a href="slides/hbank_slides.pdf" target="_blank">slides</a>
                 </div>
             </li>
             <li>
                 <span style="color: rgb(80, 136, 164); font-weight: bold;">A Distributional Theory of Household Sentiment</span>, <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a></span>
                 <div class="details">
-                    <a href="slides/distributional_slides.pdf" target="_blank" style="color: #4a5568; text-decoration: none; font-weight: normal;">slides</a>
+                    <a href="slides/distributional_slides.pdf" target="_blank">slides</a>
                 </div>
             </li>
         </ul>
