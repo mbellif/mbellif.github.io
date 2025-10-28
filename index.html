@@ -112,7 +112,6 @@
       align-items: center;
       gap: 10px;
       margin-top: 8px;
-      flex-wrap: wrap;
     }
 
     .details a {
@@ -141,44 +140,9 @@
 
     /* New Style for citation text */
     .citation-info {
-      font-size: 16px;
+      font-size: 16px;          /* Slightly smaller on desktop/tablet */
       font-weight: bold;
-      color: #4a5568;
-    }
-
-    /* Abstract toggle + box */
-    .abstract-toggle {
-      display: inline-block;
-      padding: 5px 12px;
-      margin-right: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 0;
-      border-radius: 12px;
-      cursor: pointer;
-      color: rgb(80, 136, 164);
-      background-color: rgba(80, 136, 164, 0.15);
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-    .abstract-toggle:hover {
-      background-color: rgba(80, 136, 164, 0.25);
-      transform: scale(1.05);
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .abstract[hidden] { display: none !important; }
-    .abstract {
-      margin-top: 10px;
-      padding: 14px 16px;
-      border: 1px solid #eaeaea;
-      border-radius: 12px;
-      background: #fafafa;
-      color: #4a5568;
-      font-size: 16px;
-      line-height: 1.7;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      color: #4a5568;           /* Same greyish color as subsection titles */
     }
 
     /* Sections */
@@ -199,11 +163,16 @@
       margin-bottom: 15px;
     }
 
-    /* Research Subsections */
+    /* Research Subsections (Publications, Working Papers, Work in Progress) */
     #research .subsection {
       margin-bottom: 25px;
     }
 
+    /* Subsection Titles:
+       - Aligned with section titles (no indent)
+       - Font size 20px
+       - Reduced font weight from 600 to 560 (approximately 10% less bold)
+       - Underlined for visual separation */
     #research .subsection h3 {
       font-size: 20px;
       font-weight: 560;
@@ -277,13 +246,16 @@
         text-align: left;
       }
 
+      /* Increase font size slightly for citation-info on mobile */
       .citation-info {
         font-size: 16px;
         font-weight: bold;
-        color: #4a5568;
+        color: #4a5568; /* same greyish color */
       }
-
-      /* Mobile Header - original layout for Research, CV, Teaching under the title */
+    }
+    
+    /* Mobile Header - original layout for Research, CV, Teaching under the title */
+    @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: center;
@@ -349,43 +321,24 @@
             <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
             <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
             <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
-            <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
-            <button class="abstract-toggle" aria-expanded="false" type="button">Abstract</button>
-          </div>
-          <div class="abstract" hidden>
-            <p>
-              <!-- Replace with your actual abstract -->
-              We study regional propagation of fiscal shocks in a heterogeneous-economy framework and
-              establish conditions for a “regional Keynesian cross.” Using newly assembled data, we
-              estimate multipliers that vary with local slack, openness, and fiscal space.
-            </p>
+	    <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
           </div>
         </li>
 
-        <li>
-          <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>, 
+	<li>
+	  <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>, 
           <span class="coauthors">
             with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
             and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">
               Jacopo Tozzo
             </a>
           </span>
-          <div class="details">
+	  <div class="details">
             <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/bct.html" target="_blank">BibTeX</a>
-            <button class="abstract-toggle" aria-expanded="false" type="button">Abstract</button>
-          </div>
-          <div class="abstract" hidden>
-            <p>
-              <!-- Replace with your actual abstract -->
-              We document a sentiment-driven transmission channel of fiscal policy. Exploiting
-              high-frequency news and survey data, we show that policy announcements shift expectations
-              and real outcomes beyond standard income and substitution effects.
-            </p>
           </div>
         </li>
-
-        <li>
+	<li>
           <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>, 
           <span class="coauthors">
             with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
@@ -396,15 +349,7 @@
           <div class="details">
             <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
             <a href="slides/deha_slides.pdf" target="_blank">Slides</a>	
-            <a href="bibtex/deha.html" target="_blank">BibTeX</a>
-            <button class="abstract-toggle" aria-expanded="false" type="button">Abstract</button>
-          </div>
-          <div class="abstract" hidden>
-            <p>
-              <!-- Replace with your actual abstract -->
-              We develop a distributional model of household sentiment in which heterogeneity in income,
-              wealth, and exposure to shocks generates distinct expectation dynamics and aggregate implications.
-            </p>
+	    <a href="bibtex/deha.html" target="_blank">BibTeX</a>
           </div>
         </li>
 
@@ -417,9 +362,73 @@
           <div class="details">
             <a href="papers/hbank_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/hbank.html" target="_blank">BibTeX</a>
-            <button class="abstract-toggle" aria-expanded="false" type="button">Abstract</button>
           </div>
-          <div class="abstract" hidden>
-            <p>
-              <!-- Replace with your actual abstract -->
-              We introduce bank heterogeneity into a monetary policy framework to study redistribut
+        </li>
+        <!-- Add more items here -->
+      </ul>
+    </div>
+
+    <!-- Publications Subsection -->
+    <div class="subsection" id="publications">
+      <h3>Publications</h3>
+      <ul>
+        <li>
+          <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>, 
+          <span class="coauthors">
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
+            and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
+          </span>
+          <div class="details">
+            <a href="papers/ezrkc_draft.pdf" target="_blank">Paper</a>
+            <a href="slides/ezrkc_slides.pdf" target="_blank">Slides</a>
+            <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
+            <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
+	    <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Journal Version</a>
+            <span class="citation-info">Journal of International Economics, July 2025</span>
+          </div>
+        </li>
+        <!-- Add more items here -->
+      </ul>
+    </div>
+
+    <!-- Work in Progress Subsection -->
+    <div class="subsection" id="work-in-progress">
+      <h3>Works in Progress</h3>
+      <ul>
+        <li>
+          <span style="color: rgb(80, 136, 164); font-weight: bold;">
+            Crises without FIRE: Animal Spirits and the Financial Accelerator
+          </span>, 
+          <span class="coauthors">
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            </a>
+          </span>
+        </li>
+	<li>
+          <span style="color: rgb(80, 136, 164); font-weight: bold;">
+            Firms' Expectations and Directed Innovation: Implications for Growth
+          </span>, 
+          <span class="coauthors">
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            </a>
+          </span>
+        </li>
+        <!-- Add more items here -->
+      </ul>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <ul>
+      <li>TA for the PhD course <em>EC442 &mdash; Macroeconomics for MRes students</em>, LSE</li>
+      <li>TA for the undergraduate course <em>EC2B1 &mdash; Macroeconomics II</em>, LSE</li>
+      <li>TA for the undergraduate course <em>30459 &mdash; Macroeconomics and Economic Policy</em>, Bocconi</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2024 Marco Bellifemine. All rights reserved.
+  </footer>
+</body>
+</html>
