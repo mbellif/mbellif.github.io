@@ -80,6 +80,11 @@
       color: rgb(181, 99, 101);
     }
 
+    .main .about .job-market {
+      font-weight: bold;
+      color: #4a5568;
+    }
+
     .main .picture {
       flex: 0 0 250px;
       text-align: center;
@@ -105,44 +110,140 @@
       font-weight: normal;
     }
 
-    /* Modern Button for slides, data, bibtex, etc. */
+    /* ============================================
+       BUTTONS / DETAILS ROW (paper, slides, etc.)
+       ============================================ */
     .details {
       min-height: 5px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 5px;
       margin-top: 8px;
     }
 
-    .details a {
-      display: inline-block;
-      padding: 5px 12px;
-      margin-right: 8px;
+    /* Standard outline buttons (Paper, Slides, BibTeX, etc.) */
+    .details a,
+    .details button.abstract-toggle {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 8px;
       color: rgb(80, 136, 164);
-      font-size: 14px;
+      font-family: inherit;
+      font-size: 11.5px;
+      line-height: 1.6;
       text-decoration: none;
-      background-color: rgba(80, 136, 164, 0.15);
-      border-radius: 12px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      font-weight: 600;
+      background-color: transparent;
+      border: 1px solid rgba(80, 136, 164, 0.35);
+      border-radius: 5px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
-    .details a:hover {
-      background-color: rgba(80, 136, 164, 0.25);
-      transform: scale(1.05);
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    .details a:hover,
+    .details button.abstract-toggle:hover {
+      background-color: rgba(80, 136, 164, 0.08);
+      border-color: rgba(80, 136, 164, 0.6);
+      color: rgb(80, 136, 164);
+    }
+
+    /* Plus icon on Abstract button */
+    .details button.abstract-toggle .icon {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 400;
+      font-size: 12.5px;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .details button.abstract-toggle.open {
+      background-color: rgba(80, 136, 164, 0.1);
+      border-color: rgba(80, 136, 164, 0.55);
+    }
+
+    .details button.abstract-toggle.open .icon {
+      transform: rotate(45deg);
+    }
+
+    /* Gray (in-progress) variant of Abstract button */
+    .details button.abstract-toggle.gray {
+      color: #94a3b8;
+      border-color: rgba(100, 116, 139, 0.3);
+    }
+
+    .details button.abstract-toggle.gray:hover {
+      background-color: rgba(100, 116, 139, 0.08);
+      border-color: rgba(100, 116, 139, 0.5);
+      color: #94a3b8;
+    }
+
+    .details button.abstract-toggle.gray.open {
+      background-color: rgba(100, 116, 139, 0.1);
+      border-color: rgba(100, 116, 139, 0.5);
+    }
+
+    /* Non-clickable placeholder button ("Draft coming soon", etc.) */
+    .details .placeholder-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 8px;
+      font-family: inherit;
+      font-size: 11.5px;
+      line-height: 1.6;
+      background-color: transparent;
+      border: 1px solid rgba(100, 116, 139, 0.3);
+      border-radius: 5px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: #94a3b8;
+      font-style: italic;
+      cursor: default;
+    }
+
+    /* R&R / journal info next to the buttons */
+    .details .citation-info {
+      margin-left: 6px;
+      padding-left: 12px;
+      border-left: 1px solid #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* ============================================
+       ABSTRACT FOLD-OUT BOX
+       ============================================ */
+    .abstract {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+    }
+
+    .abstract.open {
+      max-height: 600px;
+      opacity: 1;
+      margin-top: 10px;
+    }
+
+    .abstract-content {
+      background: #f8fafb;
+      border: 1px solid #e7ecf1;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #4a5568;
+      max-width: 760px;
     }
 
     .bold-link {
       font-weight: bold;
-    }
-
-    /* New Style for citation text */
-    .citation-info {
-      font-size: 16px;          /* Slightly smaller on desktop/tablet */
-      font-weight: bold;
-      color: #4a5568;           /* Same greyish color as subsection titles */
     }
 
     /* Sections */
@@ -163,16 +264,11 @@
       margin-bottom: 15px;
     }
 
-    /* Research Subsections (Publications, Working Papers, Work in Progress) */
+    /* Research Subsections */
     #research .subsection {
       margin-bottom: 25px;
     }
 
-    /* Subsection Titles:
-       - Aligned with section titles (no indent)
-       - Font size 20px
-       - Reduced font weight from 600 to 560 (approximately 10% less bold)
-       - Underlined for visual separation */
     #research .subsection h3 {
       font-size: 20px;
       font-weight: 560;
@@ -192,15 +288,21 @@
       font-size: 18px;
     }
 
-    section ul li a {
+    section ul li > a {
       color: rgb(80, 136, 164);
       text-decoration: none;
       font-weight: bold;
     }
 
-    section ul li a:hover {
+    section ul li > a:hover {
       color: rgb(181, 99, 101);
       text-decoration: underline;
+    }
+
+    /* Non-link paper titles (e.g. JMP without a draft yet) */
+    .jmp-title {
+      color: rgb(80, 136, 164);
+      font-weight: bold;
     }
 
     /* Footer */
@@ -213,7 +315,9 @@
       border-top: 1px solid #eaeaea;
     }
 
-    /* Responsive Design */
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
     @media (max-width: 768px) {
       .main {
         flex-wrap: wrap;
@@ -234,42 +338,33 @@
         flex-wrap: wrap;
       }
 
-      .details a {
-        margin-bottom: 10px;
+      /* On narrow screens, drop the citation-info to its own line and
+         remove the side-divider so it reads cleanly. */
+      .details .citation-info {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+        margin-top: 4px;
       }
 
-      .details span {
-        display: block;
-        font-size: 14px;
-        color: #555;
-        margin-top: 5px;
-        text-align: left;
-      }
-
-      /* Increase font size slightly for citation-info on mobile */
-      .citation-info {
-        font-size: 16px;
-        font-weight: bold;
-        color: #4a5568; /* same greyish color */
-      }
-    }
-    
-    /* Mobile Header - original layout for Research, CV, Teaching under the title */
-    @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 15px 5%;
       }
+
       header h1 {
         font-size: 28px;
         margin-bottom: 10px;
       }
+
       nav {
         display: flex;
         justify-content: center;
       }
+
       nav a {
         margin: 0 10px;
         font-size: 18px;
@@ -295,9 +390,10 @@
       </p>
       <p>
         You can find my CV <a href="cv/cv_bellifemine.pdf" target="_blank" class="bold-link">here</a>
-        and you can contact me at 
+        and you can contact me at
         <script>document.write('m.bellifemine' + '@' + 'lse.ac.uk');</script>
       </p>
+      <p class="job-market">I will be on the 2026/2027 academic job market.</p>
     </div>
     <div class="picture">
       <img src="pictures/bellifemine_picture.jpg" alt="Marco Bellifemine">
@@ -307,113 +403,151 @@
   <section id="research">
     <h2>Research</h2>
 
-    <!-- Working Papers Subsection -->
+    <!-- Job Market Paper -->
+    <div class="subsection" id="job-market-paper">
+      <h3>Job Market Paper</h3>
+      <ul>
+        <li>
+          <span class="jmp-title">Leveraged Beliefs: Investor Expectations and the Financial Accelerator</span>,
+          <span class="coauthors">
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a>
+          </span>
+          <div class="details">
+            <button class="abstract-toggle gray" type="button">Abstract<span class="icon">+</span></button>
+            <span class="placeholder-btn">Draft coming soon</span>
+          </div>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace this text with the real abstract for &ldquo;Leveraged Beliefs: Investor Expectations and the Financial Accelerator&rdquo;.]
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Working Papers -->
     <div class="subsection" id="working-papers">
       <h3>Working Papers</h3>
       <ul>
         <li>
-          <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a>, 
+          <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a>,
           <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
           </span>
           <div class="details">
+            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
             <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
             <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
-	    <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
+            <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
           </div>
-        </li>
-
-	<li>
-	  <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>, 
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
-            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">
-              Jacopo Tozzo
-            </a>
-          </span>
-	  <div class="details">
-            <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
-            <a href="bibtex/bct.html" target="_blank">BibTeX</a>
-          </div>
-        </li>
-	<li>
-          <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>, 
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
-            and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">
-              Seyed Hosseini Maasoum
-            </a>
-          </span>
-          <div class="details">
-            <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
-            <a href="slides/deha_slides.pdf" target="_blank">Slides</a>	
-	    <a href="bibtex/deha.html" target="_blank">BibTeX</a>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace with the real abstract for &ldquo;The Regional Keynesian Cross&rdquo;.]
+            </div>
           </div>
         </li>
 
         <li>
-          <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>, 
+          <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>,
           <span class="coauthors">
-            with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a> 
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a>
+          </span>
+          <div class="details">
+            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
+            <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
+            <a href="bibtex/bct.html" target="_blank">BibTeX</a>
+          </div>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace with the real abstract for &ldquo;The Sentiment Channel of Fiscal Policy&rdquo;.]
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>,
+          <span class="coauthors">
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a>
+          </span>
+          <div class="details">
+            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
+            <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
+            <a href="slides/deha_slides.pdf" target="_blank">Slides</a>
+            <a href="bibtex/deha.html" target="_blank">BibTeX</a>
+          </div>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace with the real abstract for &ldquo;A Distributional Theory of Household Sentiment&rdquo;.]
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>,
+          <span class="coauthors">
+            with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
             and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a>
           </span>
           <div class="details">
+            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/hbank_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/hbank.html" target="_blank">BibTeX</a>
           </div>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace with the real abstract for &ldquo;HBANK: Monetary Policy with Heterogeneous Banks&rdquo;.]
+            </div>
+          </div>
         </li>
-        <!-- Add more items here -->
       </ul>
     </div>
 
-    <!-- Publications Subsection -->
+    <!-- Publications -->
     <div class="subsection" id="publications">
       <h3>Publications</h3>
       <ul>
         <li>
-          <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>, 
+          <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>,
           <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a> 
+            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
           </span>
           <div class="details">
+            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/ezrkc_draft.pdf" target="_blank">Paper</a>
             <a href="slides/ezrkc_slides.pdf" target="_blank">Slides</a>
             <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
             <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
-	    <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Journal Version</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Journal Version</a>
             <span class="citation-info">Journal of International Economics, July 2025</span>
           </div>
+          <div class="abstract">
+            <div class="abstract-content">
+              [Placeholder abstract &mdash; replace with the real abstract for &ldquo;Monetary Unions with Heterogeneous Fiscal Space&rdquo;.]
+            </div>
+          </div>
         </li>
-        <!-- Add more items here -->
       </ul>
     </div>
 
-    <!-- Work in Progress Subsection -->
+    <!-- Works in Progress -->
     <div class="subsection" id="work-in-progress">
       <h3>Works in Progress</h3>
       <ul>
         <li>
-          <span style="color: rgb(80, 136, 164); font-weight: bold;">
-            Crises without FIRE: Animal Spirits and the Financial Accelerator
-          </span>, 
+          <span class="jmp-title">The Marginal Propensity to Invest: Evidence from Italian Public Debt Settlements</span>,
           <span class="coauthors">
             with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            </a>
           </span>
+          <div class="details">
+            <span class="placeholder-btn">Draft pending approval</span>
+          </div>
         </li>
-	<li>
-          <span style="color: rgb(80, 136, 164); font-weight: bold;">
-            The Marginal Propensity to Invest
-          </span>, 
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            </a>
-          </span>
-        </li>
-        <!-- Add more items here -->
       </ul>
     </div>
   </section>
@@ -430,5 +564,18 @@
   <footer>
     &copy; 2024 Marco Bellifemine. All rights reserved.
   </footer>
+
+  <script>
+    // Toggle abstract fold-outs
+    document.querySelectorAll('.abstract-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open');
+        var li = btn.closest('li');
+        if (!li) return;
+        var abstract = li.querySelector('.abstract');
+        if (abstract) abstract.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
