@@ -50,18 +50,14 @@
 
     /* Main Content */
     .main {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
+      display: block;
       padding: 20px 10% 0;
-      align-items: flex-start;
       margin-bottom: 0;
     }
 
     .main .about {
-      flex: 1;
-      min-width: 300px;
-      margin-right: 40px;
+      min-width: 0;
+      margin-right: 0;
     }
 
     .main .about p {
@@ -87,7 +83,10 @@
     }
 
     .main .picture {
-      flex: 0 0 250px;
+      float: right;
+      width: 250px;
+      margin-left: 25px;
+      margin-bottom: 10px;
       text-align: center;
     }
 
@@ -367,10 +366,6 @@
        RESPONSIVE
        ============================================ */
     @media (max-width: 768px) {
-      .main {
-        flex-wrap: wrap;
-      }
-
       .main .about {
         margin-right: 0;
         margin-bottom: 20px;
@@ -378,7 +373,8 @@
       }
 
       .main .picture {
-        flex: 0 0 auto;
+        float: none;
+        width: auto;
         margin: 0 auto;
       }
 
