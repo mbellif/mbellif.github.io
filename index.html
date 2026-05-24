@@ -380,7 +380,42 @@
       border-top: 1px solid #eaeaea;
     }
 
-    /* ============================================
+    /* Desktop-only: buttons + coauthors on the same line,
+       with a small elegant vertical divider between them. */
+    @media (min-width: 769px) {
+      .paper-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 4px;
+      }
+
+      .paper-meta .details {
+        order: 1;
+        margin-top: 0;
+      }
+
+      .paper-meta .coauthors {
+        order: 2;
+        margin-top: 0;
+        margin-left: 14px;
+        padding-left: 14px;
+        position: relative;
+      }
+
+      .paper-meta .coauthors::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 14px;
+        width: 1px;
+        background: #cbd5e0;
+      }
+    }
+
+        /* ============================================
        RESPONSIVE
        ============================================ */
     @media (max-width: 768px) {
@@ -464,11 +499,13 @@
       <ul>
         <li>
           <span class="jmp-title">Leveraged Beliefs: Investor Expectations and the Financial Accelerator</span>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle gray" type="button">Abstract<span class="icon">+</span></button>
             <span class="placeholder-btn">Draft coming soon</span>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -485,13 +522,15 @@
       <ul>
         <li>
           <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a><span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
             <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
             <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -505,13 +544,15 @@
 
         <li>
           <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/bct.html" target="_blank">BibTeX</a>
             <a href="https://cepr.org/voxeu/columns/sentiment-channel-fiscal-policy" target="_blank">VoxEU article</a>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -522,13 +563,15 @@
 
         <li>
           <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
             <a href="slides/deha_slides.pdf" target="_blank">Slides</a>
             <a href="bibtex/deha.html" target="_blank">BibTeX</a>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -539,12 +582,14 @@
 
         <li>
           <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>
-          <span class="coauthors">with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
             and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/hbank_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/hbank.html" target="_blank">BibTeX</a>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -561,13 +606,15 @@
       <ul>
         <li>
           <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a><span class="citation-info">Journal of International Economics, July 2025</span>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
-          <div class="details">
+            <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Paper</a>
             <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
             <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
+          </div>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -587,9 +634,11 @@
       <ul>
         <li>
           <span class="jmp-title">The Marginal Propensity to Invest: Evidence from Italian Public Debt Settlements</span>
-          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a></span>
-          <div class="details">
+          <div class="paper-meta">
+            <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a></span>
+            <div class="details">
             <span class="placeholder-btn">Draft pending approval</span>
+          </div>
           </div>
         </li>
       </ul>
