@@ -101,6 +101,15 @@
     .coauthors {
       color: #555;
       font-style: italic;
+      font-size: 0.88em;
+    }
+
+    .coauthors::before {
+      content: "(";
+    }
+
+    .coauthors::after {
+      content: ")";
     }
 
     .coauthors a {
@@ -203,16 +212,24 @@
       cursor: default;
     }
 
-    /* R&R / journal info next to the buttons */
+    /* R&R / journal info — sits BEFORE the buttons */
     .details .citation-info {
-      margin-left: 8px;
-      padding-left: 12px;
-      border-left: 1px solid #e2e8f0;
-      font-size: 13.5px;
+      margin-right: 8px;
+      padding-right: 12px;
+      border-right: 1px solid #e2e8f0;
+      font-size: 15px;
       font-weight: 700;
-      color: #334155;
+      color: #475569;
       font-style: normal;
       letter-spacing: 0.005em;
+    }
+
+    /* If the citation is the only thing in the row (e.g. Policy Articles),
+       drop the divider so nothing dangles. */
+    .details .citation-info:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
     }
 
     /* ============================================
@@ -342,11 +359,11 @@
       /* On narrow screens, drop the citation-info to its own line and
          remove the side-divider so it reads cleanly. */
       .details .citation-info {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
         width: 100%;
-        margin-top: 4px;
+        margin-bottom: 4px;
       }
 
       header {
@@ -409,11 +426,9 @@
       <h3>Job Market Paper</h3>
       <ul>
         <li>
-          <span class="jmp-title">Leveraged Beliefs: Investor Expectations and the Financial Accelerator</span>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a>
-          </span>
+          <span class="jmp-title">Leveraged Beliefs: Investor Expectations and the Financial Accelerator</span>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
           <div class="details">
             <button class="abstract-toggle gray" type="button">Abstract<span class="icon">+</span></button>
             <span class="placeholder-btn">Draft coming soon</span>
@@ -432,17 +447,15 @@
       <h3>Working Papers</h3>
       <ul>
         <li>
-          <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
-          </span>
+          <a href="papers/rkc_draft.pdf" target="_blank">The Regional Keynesian Cross</a>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
           <div class="details">
+            <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
             <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
             <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
-            <span class="citation-info">Revise &amp; Resubmit, Review of Economic Studies</span>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -452,15 +465,14 @@
         </li>
 
         <li>
-          <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a>
-          </span>
+          <a href="papers/bct_draft.pdf" target="_blank">The Sentiment Channel of Fiscal Policy</a>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
           <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
             <a href="bibtex/bct.html" target="_blank">BibTeX</a>
+            <a href="https://cepr.org/voxeu/columns/sentiment-channel-fiscal-policy" target="_blank">VoxEU article</a>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -470,11 +482,9 @@
         </li>
 
         <li>
-          <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a>
-          </span>
+          <a href="papers/deha_draft.pdf" target="_blank">A Distributional Theory of Household Sentiment</a>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a></span>
           <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
@@ -489,11 +499,9 @@
         </li>
 
         <li>
-          <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>,
-          <span class="coauthors">
-            with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
-            and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a>
-          </span>
+          <a href="papers/hbank_draft.pdf" target="_blank">HBANK: Monetary Policy with Heterogeneous Banks</a>
+          <span class="coauthors">with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
+            and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a></span>
           <div class="details">
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
             <a href="papers/hbank_draft.pdf" target="_blank">Paper</a>
@@ -513,19 +521,15 @@
       <h3>Publications</h3>
       <ul>
         <li>
-          <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-            and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
-          </span>
+          <a href="papers/ezrkc_draft.pdf" target="_blank">Monetary Unions with Heterogeneous Fiscal Space</a>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
           <div class="details">
+            <span class="citation-info">Journal of International Economics, July 2025</span>
             <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="papers/ezrkc_draft.pdf" target="_blank">Paper</a>
-            <a href="slides/ezrkc_slides.pdf" target="_blank">Slides</a>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Paper</a>
             <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
             <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Journal Version</a>
-            <span class="citation-info">Journal of International Economics, July 2025</span>
           </div>
           <div class="abstract">
             <div class="abstract-content">
@@ -541,12 +545,25 @@
       <h3>Works in Progress</h3>
       <ul>
         <li>
-          <span class="jmp-title">The Marginal Propensity to Invest: Evidence from Italian Public Debt Settlements</span>,
-          <span class="coauthors">
-            with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
-          </span>
+          <span class="jmp-title">The Marginal Propensity to Invest: Evidence from Italian Public Debt Settlements</span>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a></span>
           <div class="details">
             <span class="placeholder-btn">Draft pending approval</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Policy Articles -->
+    <div class="subsection" id="policy-articles">
+      <h3>Policy Articles</h3>
+      <ul>
+        <li>
+          <a href="https://cepr.org/voxeu/columns/sentiment-channel-fiscal-policy" target="_blank">The Sentiment Channel of Fiscal Policy</a>
+          <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
+            and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
+          <div class="details">
+            <span class="citation-info">VoxEU, December 2025</span>
           </div>
         </li>
       </ul>
@@ -563,7 +580,7 @@
   </section>
 
   <footer>
-    &copy; 2024 Marco Bellifemine. All rights reserved. This website does not use cookies. 
+    &copy; 2024 Marco Bellifemine. All rights reserved.
   </footer>
 
   <script>
