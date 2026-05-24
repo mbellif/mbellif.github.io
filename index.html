@@ -21,90 +21,81 @@
     }
 
     /* Header */
-    header {
+    /* Page wrapper — two columns */
+    .page {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1px 10%;
-      background-color: #ffffff;
-      border-bottom: 1px solid #eaeaea;
+      gap: 48px;
+      padding: 30px 6% 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: flex-start;
     }
 
-    header h1 {
-      font-size: 36px;
+    /* Left column — name + picture */
+    .sidebar {
+      flex: 0 0 230px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .sidebar h1 {
+      font-size: 30px;
       color: #4a5568;
+      margin-bottom: 18px;
+      line-height: 1.2;
     }
 
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #4a5568;
-      font-size: 22px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: rgb(181, 99, 101);
+    /* Right column — about + research + teaching */
+    .content {
+      flex: 1;
+      min-width: 0;
     }
 
     /* Main Content */
-    .main {
-      display: block;
-      padding: 6px 10% 0;
-      margin-bottom: 0;
-    }
-
-    .main .about {
-      min-width: 0;
-      margin-right: 0;
-    }
-
-    .main .about p {
+    .about p {
       font-size: 18px;
       color: #4a5568;
       margin-bottom: 15px;
     }
 
-    .main .about a {
+    .about a {
       color: rgb(80, 136, 164);
       text-decoration: none;
     }
 
-    .main .about a:hover {
+    .about a:hover {
       text-decoration: underline;
       color: rgb(181, 99, 101);
     }
 
-    .main .about .job-market {
+    .about .job-market {
       font-weight: bold;
       color: #4a5568;
-      margin-bottom: 9px;
+      margin-bottom: 18px;
     }
 
-    .main .picture {
-      float: right;
-      width: 210px;
-      margin-left: 25px;
-      margin-bottom: 10px;
-      text-align: center;
+    .sidebar .picture {
+      width: 100%;
     }
 
-    .main .picture img {
+    .sidebar .picture img {
       width: 100%;
       max-width: 230px;
-      height: 250px;
+      height: 270px;
       object-fit: cover;
       object-position: center top;
       border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      display: block;
     }
 
     /* Styling for coauthors */
     .coauthors {
+      display: block;
       color: #555;
       font-style: italic;
       font-size: 0.88em;
+      margin-top: 2px;
     }
 
     .coauthors::before {
@@ -296,7 +287,7 @@
     /* Sections */
     section {
       margin-top: 20px;
-      padding: 0 10%;
+      padding: 0;
     }
 
     #research {
@@ -366,15 +357,25 @@
        RESPONSIVE
        ============================================ */
     @media (max-width: 768px) {
-      .main .about {
-        margin-right: 0;
-        margin-bottom: 20px;
+      .page {
+        flex-direction: column;
+        padding: 18px 5% 12px;
+        gap: 20px;
+      }
+
+      .sidebar {
+        position: static;
+        flex: 0 0 auto;
         text-align: center;
       }
 
-      .main .picture {
-        float: none;
-        width: auto;
+      .sidebar h1 {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+
+      .sidebar .picture img {
+        max-width: 200px;
         margin: 0 auto;
       }
 
@@ -392,45 +393,20 @@
         margin-bottom: 4px;
       }
 
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 15px 5%;
-      }
-
-      header h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-      }
-
-      nav {
-        display: flex;
-        justify-content: center;
-      }
-
-      nav a {
-        margin: 0 10px;
-        font-size: 18px;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Marco Bellifemine</h1>
-    <nav>
-      <a href="#research">Research</a>
-      <a href="cv/cv_bellifemine.pdf">CV</a>
-      <a href="#teaching">Teaching</a>
-    </nav>
-  </header>
+  <div class="page">
+    <aside class="sidebar">
+      <h1>Marco Bellifemine</h1>
+      <div class="picture">
+        <img src="pictures/bellifemine_picture.jpg" alt="Marco Bellifemine">
+      </div>
+    </aside>
 
-  <div class="main">
-    <div class="picture">
-      <img src="pictures/bellifemine_picture.jpg" alt="Marco Bellifemine">
-    </div>
-    <div class="about">
+    <main class="content">
+      <div class="about">
       <p>
         I am a fifth year PhD student in Economics at the London School of Economics.
         My research interests are in macroeconomics.
@@ -440,11 +416,10 @@
         and you can contact me at
         <script>document.write('m.bellifemine' + '@' + 'lse.ac.uk');</script>
       </p>
-      <p class="job-market">I will be on the 2026/2027 academic job market.</p>
-    </div>
-  </div>
+        <p class="job-market">I will be on the 2026/2027 academic job market.</p>
+      </div>
 
-  <section id="research">
+      <section id="research">
     <h2>Research</h2>
 
     <!-- Job Market Paper -->
@@ -609,10 +584,12 @@
       <li>TA for the undergraduate course <em>EC2B1 &mdash; Macroeconomics II</em>, LSE</li>
       <li>TA for the undergraduate course <em>30459 &mdash; Macroeconomics and Economic Policy</em>, Bocconi</li>
     </ul>
-  </section>
+      </section>
+    </main>
+  </div>
 
   <footer>
-    &copy; 2024 Marco Bellifemine. All rights reserved. This website does not use cookies.
+    &copy; 2024 Marco Bellifemine. All rights reserved.
   </footer>
 
   <script>
