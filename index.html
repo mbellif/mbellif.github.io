@@ -53,9 +53,9 @@
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
-      padding: 20px 10%;
+      padding: 20px 10% 0;
       align-items: flex-start;
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
 
     .main .about {
@@ -83,6 +83,7 @@
     .main .about .job-market {
       font-weight: bold;
       color: #4a5568;
+      margin-bottom: 0;
     }
 
     .main .picture {
@@ -93,6 +94,9 @@
     .main .picture img {
       width: 100%;
       max-width: 250px;
+      height: 270px;
+      object-fit: cover;
+      object-position: center top;
       border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     }
@@ -258,6 +262,32 @@
       line-height: 1.65;
       color: #4a5568;
       max-width: 760px;
+    }
+
+    /* Press / external coverage — small and discrete */
+    .coverage {
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .coverage-label {
+      font-weight: 600;
+      color: #475569;
+      font-style: normal;
+      margin-right: 4px;
+    }
+
+    .coverage a {
+      color: rgb(80, 136, 164);
+      text-decoration: none;
+    }
+
+    .coverage a:hover {
+      color: rgb(181, 99, 101);
+      text-decoration: underline;
     }
 
     .bold-link {
@@ -462,6 +492,9 @@
               We study how regional heterogeneity shapes the aggregate transmission of monetary policy and its distributional implications across space. We build a multi-region Heterogeneous-Agent New Keynesian model with 3,140 U.S. counties and cross-county differences in (i) intertemporal Marginal Propensities to Consume (MPCs) and (ii) non-tradable employment shares. We analytically characterize the nationwide consumption response to monetary policy in terms of the joint distribution of (i) and (ii). Using U.S. and Italian micro-data, we construct novel empirical measures of regional MPCs to validate our theory. Quantitatively, geographic heterogeneity leads to large distributional consequences of monetary policy across space and can sizably amplify its aggregate effects.
             </div>
           </div>
+          <div class="coverage">
+            <span class="coverage-label">Coverage:</span><a href="https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240502~4066265c78.en.html" target="_blank">Speech by Philip R. Lane, ECB Chief Economist (2024)</a>
+          </div>
         </li>
 
         <li>
@@ -535,6 +568,9 @@
             <div class="abstract-content">
               We develop a multi-country Heterogeneous Agents New Keynesian (HANK) model of a monetary union with ex-ante heterogeneity in legacy public debt across member states. Following symmetric aggregate shocks, the systematic monetary policy reaction induces heterogeneous responses driven by national fiscal space. This generates a trade-off between union-wide macroeconomic stabilization and cross-country synchronization of economic activity for the central bank. We characterize a possibility frontier between union-wide inflation stability and cross-country synchronization, which is traced out by varying the degree of the central bank's hawkishness towards inflation. We study the role of deficit caps, fiscal and political unions, and augmented Taylor rules as instruments to navigate the stabilization-synchronization trade-off.
             </div>
+          </div>
+          <div class="coverage">
+            <span class="coverage-label">Coverage:</span><a href="https://repec.unibocconi.it/baffic/baf/papers/cbafwp25256.pdf" target="_blank">Speech by Giancarlo Giorgetti, Italian Minister of Economy and Finance (2025)</a>
           </div>
         </li>
       </ul>
