@@ -85,11 +85,12 @@
     .content {
       flex: 1;
       min-width: 0;
+      max-width: 860px;
     }
 
     /* Main Content */
     .about p {
-      font-size: 18px;
+      font-size: 16px;
       color: #4a5568;
       margin-bottom: 15px;
     }
@@ -263,7 +264,7 @@
     }
 
     .abstract.open {
-      max-height: 600px;
+      max-height: 1200px;
       opacity: 1;
       margin-top: 10px;
     }
@@ -276,7 +277,7 @@
       font-size: 14px;
       line-height: 1.65;
       color: #4a5568;
-      max-width: 760px;
+      max-width: 100%;
     }
 
     /* Press / external coverage — small and discrete */
@@ -436,6 +437,8 @@
       .sidebar h1 {
         font-size: 26px;
         margin-bottom: 12px;
+        white-space: normal;
+        text-align: center;
       }
 
       .sidebar .picture img {
@@ -443,8 +446,20 @@
         margin: 0 auto;
       }
 
+      .sidebar-email {
+        text-align: center;
+      }
+
+      .sidebar-social {
+        justify-content: center;
+      }
+
       .details {
         flex-wrap: wrap;
+      }
+
+      .desktop-br {
+        display: none;
       }
 
     }
@@ -489,7 +504,7 @@
     <main class="content">
       <div class="about">
       <p>
-        I am a fifth year PhD student in Economics at the London School of Economics.
+        I am a fifth year PhD student in Economics at the London School of Economics.<br class="desktop-br">
         My research interests are in macroeconomics.
       </p>
       <p>
@@ -535,7 +550,7 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
+            <button class="abstract-toggle" type="button">Abstract &amp; Coverage<span class="icon">+</span></button>
             <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
             <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
             <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
@@ -545,9 +560,9 @@
             <div class="abstract-content">
               We study how regional heterogeneity shapes the aggregate transmission of monetary policy and its distributional implications across space. We build a multi-region Heterogeneous-Agent New Keynesian model with 3,140 U.S. counties and cross-county differences in (i) intertemporal Marginal Propensities to Consume (MPCs) and (ii) non-tradable employment shares. We analytically characterize the nationwide consumption response to monetary policy in terms of the joint distribution of (i) and (ii). Using U.S. and Italian micro-data, we construct novel empirical measures of regional MPCs to validate our theory. Quantitatively, geographic heterogeneity leads to large distributional consequences of monetary policy across space and can sizably amplify its aggregate effects.
             </div>
-          </div>
-          <div class="coverage">
-            <span class="coverage-label">Coverage:</span><a href="https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240502~4066265c78.en.html" target="_blank">Speech by P. R. Lane, ECB Chief Economist (2024)</a>
+            <div class="coverage">
+              <span class="coverage-label">Coverage:</span><a href="https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240502~4066265c78.en.html" target="_blank">Speech by P. R. Lane, ECB Chief Economist (2024)</a>
+            </div>
           </div>
         </li>
 
@@ -619,7 +634,7 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
+            <button class="abstract-toggle" type="button">Abstract &amp; Coverage<span class="icon">+</span></button>
             <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Paper</a>
             <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
             <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
@@ -629,9 +644,9 @@
             <div class="abstract-content">
               We develop a multi-country Heterogeneous Agents New Keynesian (HANK) model of a monetary union with ex-ante heterogeneity in legacy public debt across member states. Following symmetric aggregate shocks, the systematic monetary policy reaction induces heterogeneous responses driven by national fiscal space. This generates a trade-off between union-wide macroeconomic stabilization and cross-country synchronization of economic activity for the central bank. We characterize a possibility frontier between union-wide inflation stability and cross-country synchronization, which is traced out by varying the degree of the central bank's hawkishness towards inflation. We study the role of deficit caps, fiscal and political unions, and augmented Taylor rules as instruments to navigate the stabilization-synchronization trade-off.
             </div>
-          </div>
-          <div class="coverage">
-            <span class="coverage-label">Coverage:</span><a href="https://repec.unibocconi.it/baffic/baf/papers/cbafwp25256.pdf" target="_blank">Lecture by G. Giorgetti, Italian Minister of Economy and Finance (2025)</a>
+            <div class="coverage">
+              <span class="coverage-label">Coverage:</span><a href="https://repec.unibocconi.it/baffic/baf/papers/cbafwp25256.pdf" target="_blank">Lecture by G. Giorgetti, Italian Minister of Economy and Finance (2025)</a>
+            </div>
           </div>
         </li>
       </ul>
