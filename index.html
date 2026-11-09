@@ -158,9 +158,10 @@
       margin-top: 8px;
     }
 
-    /* Standard outline buttons (Paper, Slides, BibTeX, etc.) */
+    /* Standard outline buttons (paper, slides, bibtex, etc.) */
     .details a,
-    .details button.abstract-toggle {
+    .details button.abstract-toggle,
+    .details button.presentations-toggle {
       display: inline-flex;
       align-items: center;
       padding: 1px 8px;
@@ -179,14 +180,16 @@
     }
 
     .details a:hover,
-    .details button.abstract-toggle:hover {
+    .details button.abstract-toggle:hover,
+    .details button.presentations-toggle:hover {
       background-color: rgba(80, 136, 164, 0.08);
       border-color: rgba(80, 136, 164, 0.6);
       color: rgb(80, 136, 164);
     }
 
-    /* Plus icon on Abstract button */
-    .details button.abstract-toggle .icon {
+    /* Plus icon on abstract and presentations buttons */
+    .details button.abstract-toggle .icon,
+    .details button.presentations-toggle .icon {
       display: inline-block;
       margin-left: 5px;
       font-weight: 400;
@@ -542,9 +545,10 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="papers/jmp_bellifemine.pdf" target="_blank">Paper</a>
-            <a href="bibtex/jmp.html" target="_blank">BibTeX</a>
+            <button class="abstract-toggle" type="button">abstract<span class="icon">+</span></button>
+            <a href="papers/jmp_bellifemine.pdf" target="_blank">paper</a>
+            <a href="bibtex/jmp.html" target="_blank">bibtex</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -566,10 +570,11 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract &amp; Coverage<span class="icon">+</span></button>
-            <a href="papers/rkc_draft.pdf" target="_blank">Paper</a>
-            <a href="https://regionalkeynesiancross.com" target="_blank">Data</a>
-            <a href="bibtex/rkc.html" target="_blank">BibTeX</a>
+            <button class="abstract-toggle" type="button">abstract &amp; coverage<span class="icon">+</span></button>
+            <a href="papers/rkc_draft.pdf" target="_blank">paper</a>
+            <a href="https://regionalkeynesiancross.com" target="_blank">data</a>
+            <a href="bibtex/rkc.html" target="_blank">bibtex</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -588,10 +593,11 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://scholar.google.com/citations?user=3EnLMhsAAAAJ&hl=it" target="_blank">Jacopo Tozzo</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="papers/bct_draft.pdf" target="_blank">Paper</a>
-            <a href="bibtex/bct.html" target="_blank">BibTeX</a>
-            <a href="https://cepr.org/voxeu/columns/sentiment-channel-fiscal-policy" target="_blank">VoxEU article</a>
+            <button class="abstract-toggle" type="button">abstract<span class="icon">+</span></button>
+            <a href="papers/bct_draft.pdf" target="_blank">paper</a>
+            <a href="bibtex/bct.html" target="_blank">bibtex</a>
+            <a href="https://cepr.org/voxeu/columns/sentiment-channel-fiscal-policy" target="_blank">voxeu article</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -607,10 +613,11 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://sites.google.com/view/mahdi-hosseini/home" target="_blank">Seyed Hosseini Maasoum</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="papers/deha_draft.pdf" target="_blank">Paper</a>
-            <a href="slides/deha_slides.pdf" target="_blank">Slides</a>
-            <a href="bibtex/deha.html" target="_blank">BibTeX</a>
+            <button class="abstract-toggle" type="button">abstract<span class="icon">+</span></button>
+            <a href="papers/deha_draft.pdf" target="_blank">paper</a>
+            <a href="slides/deha_slides.pdf" target="_blank">slides</a>
+            <a href="bibtex/deha.html" target="_blank">bibtex</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -626,9 +633,10 @@
             <span class="coauthors">with <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a>
             and <a href="https://sites.google.com/site/monacellitommaso/" target="_blank">Tommaso Monacelli</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="papers/hbank_draft.pdf" target="_blank">Paper</a>
-            <a href="bibtex/hbank.html" target="_blank">BibTeX</a>
+            <button class="abstract-toggle" type="button">abstract<span class="icon">+</span></button>
+            <a href="papers/hbank_draft.pdf" target="_blank">paper</a>
+            <a href="bibtex/hbank.html" target="_blank">bibtex</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -650,10 +658,11 @@
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a>
             and <a href="https://www.rustamjamilov.com" target="_blank">Rustam Jamilov</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract &amp; Coverage<span class="icon">+</span></button>
-            <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">Paper</a>
-            <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">Replication</a>
-            <a href="bibtex/ezrkc.html" target="_blank">BibTeX</a>
+            <button class="abstract-toggle" type="button">abstract &amp; coverage<span class="icon">+</span></button>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0022199625000480" target="_blank">paper</a>
+            <a href="https://data.mendeley.com/datasets/8vnnztz4cf/2" target="_blank">replication</a>
+            <a href="bibtex/ezrkc.html" target="_blank">bibtex</a>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
@@ -677,9 +686,10 @@
           <div class="paper-meta">
             <span class="coauthors">with <a href="https://adriencouturier.com/" target="_blank">Adrien Couturier</a></span>
             <div class="details">
-            <button class="abstract-toggle" type="button">Abstract<span class="icon">+</span></button>
-            <a href="slides/mpi_slides.pdf" target="_blank">Slides</a>
-            <span class="placeholder-btn">Draft pending approval</span>
+            <button class="abstract-toggle" type="button">abstract<span class="icon">+</span></button>
+            <a href="slides/mpi_slides.pdf" target="_blank">slides</a>
+            <span class="placeholder-btn">draft pending approval</span>
+            <!-- <button class="presentations-toggle" type="button">presentations<span class="icon">+</span></button> -->
           </div>
           </div>
           <div class="abstract">
